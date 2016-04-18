@@ -4,44 +4,29 @@
 # Standalone UI for Distillery service
 
 
-> An Angular 2 starter kit featuring [Angular 2](https://angular.io) ([Router](https://angular.io/docs/js/latest/api/router/), [Forms](https://angular.io/docs/js/latest/api/forms/),
+### Based on Angular 2 starter kit
+Featuring [Angular 2](https://angular.io) ([Router](https://angular.io/docs/js/latest/api/router/), [Forms](https://angular.io/docs/js/latest/api/forms/),
 [Http](https://angular.io/docs/js/latest/api/http/),
 [Services](https://gist.github.com/gdi2290/634101fec1671ee12b3e#_follow_@AngularClass_on_twitter),
 [Tests](https://angular.io/docs/js/latest/api/test/), [E2E](https://angular.github.io/protractor/#/faq#what-s-the-difference-between-karma-and-protractor-when-do-i-use-which-)), [Material](https://github.com/angular/material2), [Karma](https://karma-runner.github.io/), [Protractor](https://angular.github.io/protractor/), [Jasmine](https://github.com/jasmine/jasmine), [Istanbul](https://github.com/gotwarlost/istanbul), [TypeScript](http://www.typescriptlang.org/), [Typings](https://github.com/typings/typings), [TsLint](http://palantir.github.io/tslint/), [Codelyzer](https://github.com/mgechev/codelyzer), [Hot Module Replacement](https://webpack.github.io/docs/hot-module-replacement-with-webpack.html), and [Webpack](http://webpack.github.io/) by [AngularClass](https://angularclass.com).
 
-> If you're looking for Angular 1.x please use [NG6-starter](https://github.com/angularclass/NG6-starter)
 
-> If you're looking to learn about Webpack and ES6 Build Tools check out [ES6-build-tools](https://github.com/AngularClass/ES6-build-tools)
+### More info about Webpack and ES6 Build Tools
+Check out [ES6-build-tools](https://github.com/AngularClass/ES6-build-tools)
 
-> If you're looking to learn TypeScript see [TypeStrong/learn-typescript](https://github.com/TypeStrong/learn-typescript)
-
-> If you're looking for Webpack 2 version then see the experimental version [angular2-webpack2-starter](https://github.com/gdi2290/angular2-webpack2-starter) that will be merged
-
-> If you're looking for something easier to get started with then see the offical angular2-seed that I also maintain [angular/angular2-seed](https://github.com/angular/angular2-seed)
-
-This seed repo serves as an Angular 2 starter for anyone looking to get up and running with Angular 2 and TypeScript fast. Using a [Webpack](http://webpack.github.io/) for building our files and assisting with boilerplate. We're also using Protractor for our end-to-end story and Karma for our unit tests.
-* Best practices in file and application organization for Angular 2.
-* Ready to go build system using Webpack for working with TypeScript.
-* Angular 2 examples that are ready to go when experimenting with Angular 2.
-* A great Angular 2 seed repo for anyone who wants to start their project.
-* Testing Angular 2 code with Jasmine and Karma.
-* Coverage with Istanbul and Karma
-* End-to-end Angular 2 code using Protractor.
-* Type manager with Typings
-* Hot Module Replacement with Webpack
-* Material Design with [angular/material2](https://github.com/angular/material2)
+### More info about TypeScript
+See [TypeStrong/learn-typescript](https://github.com/TypeStrong/learn-typescript)
 
 ### Quick start
 **Make sure you have Node version >= 4.0 and NPM >= 3**
 > Clone/Download the repo then edit `app.ts` inside [`/src/app/app.ts`](/src/app/app.ts)
 
 ```bash
-# clone our repo
-# --depth 1 removes all but one .git commit history
-git clone --depth 1 https://github.com/angularclass/angular2-webpack-starter.git
+# clone repo
+git clone https://github.com/mentholi/distillery-ui2.git
 
 # change directory to our repo
-cd angular2-webpack-starter
+cd distillery-ui2
 
 # add required global libraries
 npm install typings webpack-dev-server rimraf webpack -g
@@ -58,63 +43,19 @@ npm run server:dev:hmr
 # if you're in China use cnpm
 # https://github.com/cnpm/cnpm
 ```
-go to [http://0.0.0.0:3000](http://0.0.0.0:3000) or [http://localhost:3000](http://localhost:3000) in your browser
+go to [http://localhost:3000](http://localhost:3000) in your browser
 
 # Table of Contents
-* [File Structure](#file-structure)
 * [Getting Started](#getting-started)
     * [Dependencies](#dependencies)
     * [Installing](#installing)
     * [Running the app](#running-the-app)
 * [Configuration](#configuration)
-* [Contributing](#contributing)
 * [TypeScript](#typescript)
 * [Typings](#typings)
-* [Frequently asked questions](#frequently-asked-questions)
-* [Support, Questions, or Feedback](#support-questions-or-feedback)
 * [License](#license)
 
 
-## File Structure
-We use the component approach in our starter. This is the new standard for developing Angular apps and a great way to ensure maintainable code by encapsulation of our behavior logic. A component is basically a self contained app usually in a single file or a folder with each concern as a file: style, template, specs, e2e, and component class. Here's how it looks:
-```
-angular2-webpack-starter/
- ├──config/                    * our configuration
- |   ├──helpers.js             * helper functions for our configuration files
- |   ├──spec-bundle.js         * ignore this magic that sets up our angular 2 testing environment
- |   ├──karma.conf.js          * karma config for our unit tests
- |   ├──protractor.conf.js     * protractor config for our end-to-end tests
- │   ├──webpack.dev.js         * our development webpack config
- │   ├──webpack.prod.js        * our production webpack config
- │   └──webpack.test.js        * our testing webpack config
- │
- ├──src/                       * our source files that will be compiled to javascript
- |   ├──main.browser.ts        * our entry file for our browser environment
- │   │
- |   ├──index.html             * Index.html: where we generate our index page
- │   │
- |   ├──polyfills.ts           * our polyfills file
- │   │
- |   ├──vendor.ts              * our vendor file
- │   │
- │   ├──app/                   * WebApp: folder
- │   │   ├──app.spec.ts        * a simple test of components in app.ts
- │   │   ├──app.e2e.ts         * a simple end-to-end test for /
- │   │   └──app.ts             * App.ts: a simple version of our App component components
- │   │
- │   └──assets/                * static assets are served here
- │       ├──icon/              * our list of icons from www.favicon-generator.org
- │       ├──service-worker.js  * ignore this. Web App service worker that's not complete yet
- │       ├──robots.txt         * for search engines to crawl your website
- │       └──human.txt          * for humans to know who the developers are
- │
- │
- ├──tslint.json                * typescript lint config
- ├──typedoc.json               * typescript documentation generator
- ├──tsconfig.json              * config that webpack uses for typescript
- ├──typings.json               * our typings manager
- └──package.json               * what npm uses to manage it's dependencies
-```
 
 # Getting Started
 ## Dependencies
@@ -201,9 +142,6 @@ npm run e2e:live
 # Configuration
 Configuration files live in `config/` we are currently using webpack, karma, and protractor for different stages of your application
 
-# Contributing
-You can include more examples as components but they must introduce a new concept such as `Home` component (separate folders), and Todo (services). I'll accept pretty much everything so feel free to open a Pull-Request
-
 # TypeScript
 > To take full advantage of TypeScript with autocomplete you would have to install it globally and use an editor with the correct TypeScript plugins.
 
@@ -282,58 +220,12 @@ see [typings/registry](https://github.com/typings/registry)
  * The VS Code chrome debug extension support can be done via `launch.json` see issue [#144](https://github.com/AngularClass/angular2-webpack-starter/issues/144#issuecomment-164063790)
 * How do I make the repo work in a virtual machine?
  * You need to use `0.0.0.0` so revert these changes [#205](https://github.com/AngularClass/angular2-webpack-starter/pull/205/files)
+
 * What are the naming conventions for Angular 2?
  * please see issue [#185](https://github.com/AngularClass/angular2-webpack-starter/issues/185) and PR [196](https://github.com/AngularClass/angular2-webpack-starter/pull/196)
 * How do I include bootstrap or jQuery?
- * please see issue [#215](https://github.com/AngularClass/angular2-webpack-starter/issues/215) and [#214](https://github.com/AngularClass/angular2-webpack-starter/issues/214#event-511768416)
-* I'm getting an error about not finding my module that I installed?
- * please see [How to include or create custom type definitions](https://github.com/AngularClass/angular2-webpack-starter/wiki/How-to-include-or-create-custom-type-definitions) and [custom-typings.d.ts](https://github.com/AngularClass/angular2-webpack-starter/blob/master/src/custom-typings.d.ts)
-* How do I async load a component?
- * see wiki [How-do-I-async-load-a-component-with-AsyncRoute](https://github.com/AngularClass/angular2-webpack-starter/wiki/How-do-I-async-load-a-component-with-AsyncRoute)
-* Error: Cannot find module 'tapable'
- * Remove `node_modules/` and run `npm cache clean` then `npm install`
-* What about Webpack 2?
- * If you're looking for Webpack 2 version then see the [experimental version](https://github.com/gdi2290/angular2-webpack2-starter) that will be merged soon.
-* How do I turn on Hot Module Replacement
- * Run `npm run server:dev:hmr`
-* `RangeError: Maximum call stack size exceeded`
- * This is a problem with minifying Angular 2 and it's recent JIT templates. If you set `mangle` to `false` then you should be good.
-* Why is the size of my app larger in development?
- * We are using inline source-maps and hot module replacement which will increase the bundle size.
-* If you're in China
- * check out https://github.com/cnpm/cnpm
+ * please see issue [#215](https://github.com/AngularClass/angular2-webpack-starter/issues/215)
 
-# Support, Questions, or Feedback
-> Contact us anytime for anything about this repo or Angular 2
-
-* [Chat: AngularClass.slack](http://angularclass.com/member-join/)
-* [Twitter: @AngularClass](https://twitter.com/AngularClass)
-* [Gitter: AngularClass/angular2-webpack-starter](https://gitter.im/angularclass/angular2-webpack-starter)
-
-# Quick Start Guides
-
-## Nitrous
-
-You can quickly create a free development environment to get started using this
-starter kit in the cloud on [Nitrous](https://www.nitrous.io/):
-
-<a href="https://www.nitrous.io/quickstart?repo=https://github.com/nitrous-io/angular2-webpack-starter">
-  <img src="https://nitrous-image-icons.s3.amazonaws.com/quickstart.png" alt="Nitrous Quickstart" width=142 height=34>
-</a>
-
-Simply run `HOST=0.0.0.0 npm start` from the terminal inside of
-`~/code/angular2-webpack-starter` and access your site via the "Preview > 3000"
-link in the IDE.
-___
-
-enjoy — **AngularClass**
-
-<br><br>
-
-[![AngularClass](https://cloud.githubusercontent.com/assets/1016365/9863770/cb0620fc-5af7-11e5-89df-d4b0b2cdfc43.png  "Angular Class")](https://angularclass.com)
-##[AngularClass](https://angularclass.com)
-> Learn AngularJS, Angular 2, and Modern Web Development from the best.
-> Looking for corporate Angular training, want to host us, or Angular consulting? patrick@angularclass.com
 
 # License
  [MIT](/LICENSE)
