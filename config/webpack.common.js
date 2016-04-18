@@ -167,7 +167,15 @@ module.exports = {
         test: /\.html$/,
         loader: 'raw-loader',
         exclude: [helpers.root('src/index.html')]
-      }
+      },
+
+      /*
+       * Scss and bootstrap loaders
+       */
+      { test: /\.scss$/, loaders: ['style', 'css', 'postcss', 'sass'] },
+      { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url?limit=10000' },
+      // Bootstrap 3
+      { test:/bootstrap-sass[\/\\]assets[\/\\]javascripts[\/\\]/, loader: 'imports?jQuery=jquery' }
 
     ]
 
@@ -234,6 +242,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       chunksSortMode: helpers.packageSort(['polyfills', 'vendor', 'main'])
+    }),
+
+    /*
+     * jQuery plugin
+     */
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
     })
 
   ],

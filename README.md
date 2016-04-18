@@ -221,8 +221,7 @@ see [typings/registry](https://github.com/typings/registry)
 * How do I make the repo work in a virtual machine?
  * You need to use `0.0.0.0` so revert these changes [#205](https://github.com/AngularClass/angular2-webpack-starter/pull/205/files)
 
-* What are the naming conventions for Angular 2?
- * please see issue [#185](https://github.com/AngularClass/angular2-webpack-starter/issues/185) and PR [196](https://github.com/AngularClass/angular2-webpack-starter/pull/196)
+
 * How do I include bootstrap or jQuery?
  * please see issue [#215](https://github.com/AngularClass/angular2-webpack-starter/issues/215)
 
